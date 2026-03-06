@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600&family=Sora:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #080f1f;
+  --bg-soft: #111c33;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #5b677d;
+  --line: #d4dfef;
+  --primary: #2563eb;
+  --primary-strong: #1d4ed8;
+  --primary-soft: #e8f0ff;
+  --danger: #b42318;
+  --success-bg: #eaf7ef;
+  --success-text: #1f6a3d;
+  --danger-bg: #fdebec;
+  --danger-text: #8d2b2b;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  font-family: 'Sora', 'Avenir Next', 'Segoe UI', sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 14% 18%, rgba(94, 128, 214, 0.34) 0%, transparent 42%),
+    radial-gradient(circle at 88% 8%, rgba(36, 112, 153, 0.22) 0%, transparent 38%),
+    linear-gradient(160deg, var(--bg) 0%, #0c162a 48%, var(--bg-soft) 100%);
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 600;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+
+h3 {
+  font-size: 1.05rem;
+}
+
+p {
+  margin: 0;
+}

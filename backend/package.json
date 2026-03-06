@@ -1,0 +1,25 @@
+{
+  "name": "taller-final-autos",
+  "version": "1.0.0",
+  "description": "REST API for dealership management with CSV import",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "bun src/server.js",
+    "dev": "bun --watch src/server.js"
+  },
+  "keywords": [
+    "express",
+    "mysql",
+    "csv",
+    "autos"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.3"
+  }
+}

@@ -1,0 +1,14 @@
+# Dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# npm lockfiles (project uses Bun)
+package-lock.json
+backend/package-lock.json
+frontend/package-lock.json
+
+# Logs
+*.log

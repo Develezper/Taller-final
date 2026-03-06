@@ -1,0 +1,61 @@
+@media (max-width: 760px) {
+  .app-shell {
+    width: 96vw;
+    padding: 14px 0;
+    gap: 14px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-tabs {
+    gap: 10px;
+  }
+
+  .panel {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .page-stack {
+    gap: 14px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .toolbar input,
+  .toolbar select {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .actions,
+  .toolbar,
+  .csv-form {
+    gap: 10px;
+  }
+
+  .inventory-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .data-table th,
+  .data-table td {
+    font-size: 0.8rem;
+    padding: 9px;
+  }
+}

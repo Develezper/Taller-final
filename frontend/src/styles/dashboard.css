@@ -1,0 +1,99 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.stat-card {
+  border: 1px solid rgba(174, 192, 219, 0.56);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  background: linear-gradient(160deg, #ffffff 0%, #f8fbff 100%);
+  border-top: 3px solid transparent;
+}
+
+.stat-card:nth-child(2) {
+  background: linear-gradient(160deg, #ffffff 0%, #f3fbf8 100%);
+}
+
+.stat-card:nth-child(3) {
+  background: linear-gradient(160deg, #ffffff 0%, #fbf6f2 100%);
+}
+
+.stat-card:nth-child(4) {
+  background: linear-gradient(160deg, #ffffff 0%, #f5f4ff 100%);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.stat-value {
+  margin-top: 10px;
+  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.stat-total {
+  border-top-color: #2563eb;
+}
+
+.stat-total .stat-label {
+  color: #4b5b77;
+}
+
+.stat-total .stat-value {
+  color: #1d4ed8;
+}
+
+.stat-available {
+  border-top-color: #2f8f57;
+}
+
+.stat-available .stat-label {
+  color: #43684e;
+}
+
+.stat-available .stat-value {
+  color: #1f6a3d;
+}
+
+.stat-sold {
+  border-top-color: #c2413c;
+}
+
+.stat-sold .stat-label {
+  color: #7b4a49;
+}
+
+.stat-sold .stat-value {
+  color: #9f302a;
+}
+
+.stat-average {
+  border-top-color: #4f46e5;
+}
+
+.stat-average .stat-label {
+  color: #4f4e86;
+}
+
+.stat-average .stat-value {
+  color: #3730a3;
+}
+
+.brand-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+.brand-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+}

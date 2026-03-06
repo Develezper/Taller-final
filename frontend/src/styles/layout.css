@@ -1,0 +1,138 @@
+.app-shell {
+  width: min(1100px, 94vw);
+  height: 100%;
+  margin: 0 auto;
+  padding: 22px 0;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 18px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+  color: #edf3ff;
+}
+
+.topbar > div {
+  display: grid;
+  gap: 6px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: #b6c7e4;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  margin-top: 10px;
+  color: #ccd8ec;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.nav-tabs {
+  margin: 2px 0 4px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.view-container {
+  min-height: 0;
+  overflow: auto;
+  padding-right: 2px;
+  padding-bottom: 14px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.view-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.nav-tabs a {
+  text-decoration: none;
+  border: 1px solid rgba(183, 199, 226, 0.34);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: #dee9ff;
+  background: rgba(8, 16, 30, 0.56);
+  transition: all 180ms ease;
+}
+
+.nav-tabs a:hover {
+  border-color: #8eaee4;
+  background: rgba(20, 33, 58, 0.74);
+  color: #f5f9ff;
+}
+
+.nav-tabs a.active {
+  border-color: #9db9eb;
+  background: rgba(83, 120, 191, 0.33);
+  color: #f8fbff;
+}
+
+.view-container > * {
+  animation: rise 220ms ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.panel {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+  border: 1px solid rgba(173, 189, 215, 0.5);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.panel-no-bg {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 4px 0;
+}
+
+.panel-no-bg h2 {
+  color: #edf3ff;
+}
+
+.hero-panel {
+  background:
+    radial-gradient(circle at 88% 18%, rgba(101, 135, 207, 0.14) 0%, transparent 36%),
+    linear-gradient(110deg, #ffffff 0%, #f4f8ff 100%);
+}
+
+.hero-panel .eyebrow {
+  color: #2f5ca8;
+  font-weight: 700;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
