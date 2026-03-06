@@ -88,6 +88,9 @@ button:hover {
   flex-wrap: wrap;
   align-items: center;
 }
+.actions {
+  align-items: flex-end;
+}
 
 .toolbar {
   margin-bottom: 14px;
@@ -112,6 +115,7 @@ button:hover {
   border: 0;
   padding: 0;
   background: transparent;
+  border-radius: 0;
 }
 
 .message {
