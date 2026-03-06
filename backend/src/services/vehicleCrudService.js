@@ -1,4 +1,4 @@
-import { pool } from '../config/db.js';
+import { pool, withTransaction } from '../config/db.js';
 import { HttpError } from '../utils/errors.js';
 import {
   normalizePlate,
@@ -154,28 +154,17 @@ async function updateVehicle(placa, input) {
 
 async function deleteVehicle(placa) {
   const plate = normalizePlate(placa);
+  await withTransaction(async (connection) => {
+    const [vehicleRows] = await connection.execute('SELECT id FROM vehicles WHERE plate = ?', [plate]);
+    if (vehicleRows.length === 0) {
+      throw new HttpError(404, 'Auto no encontrado');
+    }
 
-  const [vehicleRows] = await pool.execute('SELECT id FROM vehicles WHERE plate = ?', [plate]);
-  if (vehicleRows.length === 0) {
-    throw new HttpError(404, 'Auto no encontrado');
-  }
-
-  const vehicleId = vehicleRows[0].id;
-  const [[checks]] = await pool.execute(
-    `SELECT
-      EXISTS(SELECT 1 FROM purchases WHERE vehicle_id = ?) AS has_purchase,
-      EXISTS(SELECT 1 FROM sales WHERE vehicle_id = ?) AS has_sale`,
-    [vehicleId, vehicleId]
-  );
-
-  if (checks.has_purchase || checks.has_sale) {
-    throw new HttpError(
-      409,
-      'No se puede eliminar: el auto tiene transacciones asociadas (compra/venta)'
-    );
-  }
-
-  await pool.execute('DELETE FROM vehicles WHERE id = ?', [vehicleId]);
+    const vehicleId = vehicleRows[0].id;
+    await connection.execute('DELETE FROM sales WHERE vehicle_id = ?', [vehicleId]);
+    await connection.execute('DELETE FROM purchases WHERE vehicle_id = ?', [vehicleId]);
+    await connection.execute('DELETE FROM vehicles WHERE id = ?', [vehicleId]);
+  });
 }
 
 export {
